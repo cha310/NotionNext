@@ -8,7 +8,7 @@ const CONFIG = {
 
   // 首页顶部通知条滚动内容，如不需要可以留空 []
   HEO_NOTICE_BAR: [
-    { title: '一人公司，无限成长，步履不停', url: 'https://achacha.cn' }
+    { title: '我坚信： 推动世界变得更好的起点，是让自己先变得更好。', url: 'https://achacha.cn' }
   ],
 
   // 英雄区左右侧组件颠倒位置
@@ -17,12 +17,12 @@ const CONFIG = {
   HEO_HERO_BODY_REVERSE: false,
 
   // 英雄区(首页顶部大卡)
-  HEO_HERO_TITLE_1: '工具只是起点',
-  HEO_HERO_TITLE_2: '关键在于如何运用',
+  HEO_HERO_TITLE_1: '高效工作',
+  HEO_HERO_TITLE_2: '解放专注力',
   HEO_HERO_TITLE_3: 'achacha.cn',
   HEO_HERO_TITLE_4: '超级个体',
-  HEO_HERO_TITLE_5: '解放专注力，用工具聪明工作的践行者。',
-  HEO_HERO_TITLE_LINK: 'https://tangly1024.com',
+  HEO_HERO_TITLE_5: '工具只是起点，关键在于如何运用',
+  HEO_HERO_TITLE_LINK: 'https://achacha.cn',
   // 英雄区遮罩文字
   HEO_HERO_COVER_TITLE: '随机漫步',
 
@@ -38,7 +38,7 @@ const CONFIG = {
 
   // 右侧个人资料卡牌欢迎语，点击可自动切换
   HEO_INFOCARD_GREETINGS: [
-    '你好！我是',
+    'Hi, 我是',
     '🔋 从工具中获得力量',
     '🏜️ 找到生活的掌控感',
     '🧘 高效解决问题，解放专注力',
