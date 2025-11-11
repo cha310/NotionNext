@@ -22,6 +22,8 @@ export function InfoCard(props) {
   const icon1 = siteConfig('HEO_INFO_CARD_ICON1', null, CONFIG)
   const url2 = siteConfig('HEO_INFO_CARD_URL2', null, CONFIG)
   const icon2 = siteConfig('HEO_INFO_CARD_ICON2', null, CONFIG)
+  const qrcode2 = siteConfig('HEO_INFO_CARD_ICON2_QRCODE', null, CONFIG)
+  const [showQrCode, setShowQrCode] = useState(false)
   return (
     <Card className='wow fadeInUp bg-[#4f65f0] dark:bg-blue-600 text-white flex flex-col w-72 overflow-hidden relative'>
       {/* 信息卡牌第一行 */}
@@ -60,7 +62,10 @@ export function InfoCard(props) {
             </div>
           )}
           {url2 && (
-            <div className='bg-indigo-400 p-2 rounded-full w-10 items-center flex justify-center transition-colors duration-200 dark:bg-blue-500 dark:hover:bg-black hover:bg-white'>
+            <div 
+              className='relative bg-indigo-400 p-2 rounded-full w-10 items-center flex justify-center transition-colors duration-200 dark:bg-blue-500 dark:hover:bg-black hover:bg-white'
+              onMouseEnter={() => qrcode2 && setShowQrCode(true)}
+              onMouseLeave={() => setShowQrCode(false)}>
               <SmartLink href={url2}>
                 {icon2?.startsWith('/') || icon2?.startsWith('http') ? (
                   <img src={icon2} className='w-5 h-5' alt='' />
@@ -68,6 +73,17 @@ export function InfoCard(props) {
                   <i className={icon2} />
                 )}
               </SmartLink>
+              {/* 悬停显示二维码 */}
+              {qrcode2 && (
+                <div className={`${showQrCode ? 'opacity-100 visible' : 'opacity-0 invisible'} absolute -top-44 left-1/2 -translate-x-1/2 z-50 transition-all duration-300`}>
+                  <div className='bg-white dark:bg-gray-800 p-3 rounded-xl shadow-2xl border-2 border-indigo-400 dark:border-blue-500'>
+                    <img src={qrcode2} className='w-36 h-36 object-cover' alt='二维码' />
+                    <div className='text-xs text-center mt-2 text-gray-600 dark:text-gray-300'>扫码添加微信</div>
+                  </div>
+                  {/* 小三角箭头 */}
+                  <div className='absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white dark:border-t-gray-800'></div>
+                </div>
+              )}
             </div>
           )}
         </div>

@@ -49,7 +49,8 @@ const CONFIG = {
   HEO_INFO_CARD_URL1: '/about',
   HEO_INFO_CARD_ICON1: 'fas fa-user',
   HEO_INFO_CARD_URL2: 'https://xhslink.com/m/1d9PONfwPsM',
-  HEO_INFO_CARD_ICON2: '/svg/xiaohongshu-red.svg', // 支持 Font Awesome 图标类名或图片路径 - 红薯图标样式
+  HEO_INFO_CARD_ICON2: '/微信.svg', // 支持 Font Awesome 图标类名或图片路径
+  HEO_INFO_CARD_ICON2_QRCODE: '/wechat.jpg', // 鼠标悬停时显示的二维码图片
   HEO_INFO_CARD_URL3: 'https://xhslink.com/m/1d9PONfwPsM',
   HEO_INFO_CARD_TEXT3: '了解更多',
 
