@@ -38,19 +38,18 @@ const CONFIG = {
 
   // 右侧个人资料卡牌欢迎语，点击可自动切换
   HEO_INFOCARD_GREETINGS: [
-    'Hi, 我是',
-    '🐱 INFJ',
-    '🏜️ 去找到属于自己的生活',
-    '🧘 高效解决问题，解放专注力',
-    '🎐 聪明工作，是为了更好地生活',
-    '💞 找到你的心流动力'
+    '设计你真正想要的人生：）',
+    '🧘 找到你的心流动力',
+    '🐱 去探索更多的可能性',
+    '🏜️ 频繁大量的记录自己',
+    '🎐 尽兴分享，自成影响'
   ],
 
   // 个人资料底部按钮
   HEO_INFO_CARD_URL1: '/about',
   HEO_INFO_CARD_ICON1: 'fas fa-user',
   HEO_INFO_CARD_URL2: 'https://xhslink.com/m/1d9PONfwPsM',
-  HEO_INFO_CARD_ICON2: 'fab fa-xiaohongshu',
+  HEO_INFO_CARD_ICON2: '/svg/xiaohongshu.svg', // 支持 Font Awesome 图标类名或图片路径
   HEO_INFO_CARD_URL3: 'https://xhslink.com/m/1d9PONfwPsM',
   HEO_INFO_CARD_TEXT3: '了解更多',
 

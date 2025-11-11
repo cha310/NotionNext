@@ -51,14 +51,22 @@ export function InfoCard(props) {
           {url1 && (
             <div className='w-10 text-center bg-indigo-400 p-2 rounded-full  transition-colors duration-200 dark:bg-blue-500 dark:hover:bg-black hover:bg-white'>
               <SmartLink href={url1}>
-                <i className={icon1} />
+                {icon1?.startsWith('/') || icon1?.startsWith('http') ? (
+                  <img src={icon1} className='w-5 h-5' alt='' />
+                ) : (
+                  <i className={icon1} />
+                )}
               </SmartLink>
             </div>
           )}
           {url2 && (
             <div className='bg-indigo-400 p-2 rounded-full w-10 items-center flex justify-center transition-colors duration-200 dark:bg-blue-500 dark:hover:bg-black hover:bg-white'>
               <SmartLink href={url2}>
-                <i className={icon2} />
+                {icon2?.startsWith('/') || icon2?.startsWith('http') ? (
+                  <img src={icon2} className='w-5 h-5' alt='' />
+                ) : (
+                  <i className={icon2} />
+                )}
               </SmartLink>
             </div>
           )}
