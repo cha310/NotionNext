@@ -1,6 +1,5 @@
 import Live2D from '@/components/Live2D'
 import dynamic from 'next/dynamic'
-import { AnalyticsCard } from './AnalyticsCard'
 import Card from './Card'
 import Catalog from './Catalog'
 import { InfoCard } from './InfoCard'
@@ -62,14 +61,12 @@ export default function SideRight(props) {
         <FaceBookPage />
         <Live2D />
 
-        {/* 标签和成绩 */}
+        {/* 标签 */}
         <Card
           className={
             'bg-white dark:bg-[#1e1e1e] dark:text-white hover:border-indigo-600  dark:hover:border-yellow-600 duration-200'
           }>
           <TagGroups tags={sortedTags} currentTag={currentTag} />
-          <hr className='mx-1 flex border-dashed relative my-4' />
-          <AnalyticsCard {...props} />
         </Card>
       </div>
     </div>
