@@ -34,9 +34,8 @@ export const MenuItemCollapse = ({ link }) => {
           <SmartLink
             href={link?.href}
             target={link?.target}
-            className='font-extralight  flex justify-between pl-2 pr-4 dark:text-gray-200 no-underline tracking-widest'>
-            <span className=' transition-all items-center duration-200'>
-              {link?.icon && <i className={link.icon + ' mr-4'} />}
+            className='font-bold font-sans flex justify-between pl-2 pr-4 dark:text-gray-200 no-underline tracking-widest'>
+            <span className='transition-all items-center duration-200'>
               {link?.name}
             </span>
           </SmartLink>
@@ -44,13 +43,17 @@ export const MenuItemCollapse = ({ link }) => {
         {hasSubMenu && (
           <div
             onClick={hasSubMenu ? toggleOpenSubMenu : null}
-            className='font-extralight flex items-center justify-between pl-2 pr-4 cursor-pointer  dark:text-gray-200 no-underline tracking-widest'>
+            className='font-bold font-sans flex items-center justify-between pl-2 pr-4 cursor-pointer dark:text-gray-200 no-underline tracking-widest'>
             <span className='transition-all items-center duration-200'>
-              {link?.icon && <i className={link.icon + ' mr-4'} />}
               {link?.name}
             </span>
-            <i
-              className={`select-none px-2 fas fa-chevron-left transition-all duration-200 ${isOpen ? '-rotate-90' : ''} text-gray-400`}></i>
+            <svg 
+              className={`w-4 h-4 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+            </svg>
           </div>
         )}
       </div>
@@ -62,10 +65,9 @@ export const MenuItemCollapse = ({ link }) => {
             return (
               <div
                 key={index}
-                className='dark:bg-hexo-black-gray dark:text-gray-200 text-left px-3 justify-start bg-gray-50 hover:bg-gray-50 dark:hover:bg-gray-900 tracking-widest transition-all duration-200  py-3 pr-6'>
+                className='dark:bg-hexo-black-gray dark:text-gray-200 text-left px-3 justify-start bg-gray-50 hover:bg-gray-50 dark:hover:bg-gray-900 tracking-widest transition-all duration-200 py-3 pr-6'>
                 <SmartLink href={sLink.href} target={link?.target}>
-                  <span className='text-sm ml-4 whitespace-nowrap'>
-                    {link?.icon && <i className={sLink.icon + ' mr-2'} />}{' '}
+                  <span className='text-sm ml-4 whitespace-nowrap font-medium'>
                     {sLink.title}
                   </span>
                 </SmartLink>

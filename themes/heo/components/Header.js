@@ -66,37 +66,37 @@ const Header = props => {
     }
   }, [])
 
-  // 导航栏根据滚动轮播菜单内容
-  useEffect(() => {
-    let prevScrollY = 0
-    let ticking = false
+  // 导航栏保持显示菜单内容，不切换
+  // useEffect(() => {
+  //   let prevScrollY = 0
+  //   let ticking = false
 
-    const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const currentScrollY = window.scrollY
-          if (currentScrollY > prevScrollY) {
-            setActiveIndex(1) // 向下滚动时设置activeIndex为1
-          } else {
-            setActiveIndex(0) // 向上滚动时设置activeIndex为0
-          }
-          prevScrollY = currentScrollY
-          ticking = false
-        })
-        ticking = true
-      }
-    }
+  //   const handleScroll = () => {
+  //     if (!ticking) {
+  //       window.requestAnimationFrame(() => {
+  //         const currentScrollY = window.scrollY
+  //         if (currentScrollY > prevScrollY) {
+  //           setActiveIndex(1) // 向下滚动时设置activeIndex为1
+  //         } else {
+  //           setActiveIndex(0) // 向上滚动时设置activeIndex为0
+  //         }
+  //         prevScrollY = currentScrollY
+  //         ticking = false
+  //       })
+  //       ticking = true
+  //     }
+  //   }
 
-    if (isBrowser) {
-      window.addEventListener('scroll', handleScroll)
-    }
+  //   if (isBrowser) {
+  //     window.addEventListener('scroll', handleScroll)
+  //   }
 
-    return () => {
-      if (isBrowser) {
-        window.removeEventListener('scroll', handleScroll)
-      }
-    }
-  }, [])
+  //   return () => {
+  //     if (isBrowser) {
+  //       window.removeEventListener('scroll', handleScroll)
+  //     }
+  //   }
+  // }, [])
 
   return (
     <>
