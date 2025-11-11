@@ -75,13 +75,13 @@ export function InfoCard(props) {
               </SmartLink>
               {/* 悬停显示二维码 */}
               {qrcode2 && (
-                <div className={`${showQrCode ? 'opacity-100 visible' : 'opacity-0 invisible'} absolute -top-44 left-1/2 -translate-x-1/2 z-50 transition-all duration-300`}>
-                  <div className='bg-white dark:bg-gray-800 p-3 rounded-xl shadow-2xl border-2 border-indigo-400 dark:border-blue-500'>
-                    <img src={qrcode2} className='w-36 h-36 object-cover' alt='二维码' />
-                    <div className='text-xs text-center mt-2 text-gray-600 dark:text-gray-300'>扫码添加微信</div>
+                <div className={`${showQrCode ? 'opacity-100 visible scale-100' : 'opacity-0 invisible scale-95'} absolute -top-[13.5rem] left-1/2 -translate-x-1/2 z-50 transition-all duration-200`}>
+                  <div className='bg-white dark:bg-gray-800 p-2 rounded-lg shadow-2xl border border-indigo-300 dark:border-blue-400'>
+                    <img src={qrcode2} className='w-48 h-48 object-contain rounded' alt='二维码' />
+                    <div className='text-xs text-center mt-1.5 text-gray-700 dark:text-gray-200 font-medium'>我的微信</div>
                   </div>
                   {/* 小三角箭头 */}
-                  <div className='absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white dark:border-t-gray-800'></div>
+                  <div className='absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-white dark:border-t-gray-800'></div>
                 </div>
               )}
             </div>
