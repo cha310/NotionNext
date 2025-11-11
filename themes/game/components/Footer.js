@@ -14,19 +14,8 @@ export const Footer = props => {
       {/* 页面底部 */}
       <div className='w-full flex justify-between p-4 '>
         <p>
-          © {siteConfig('TITLE')} {copyrightDate}
+          © {copyrightDate} CHA. All rights reserved.
         </p>
-        <p>{siteConfig('DESCRIPTION')}</p>
-
-        <span className='dark:text-gray-200 no-underline ml-4'>
-          Powered by
-          <a
-            href='https://github.com/tangly1024/NotionNext'
-            className=' hover:underline'>
-            {' '}
-            NotionNext {siteConfig('VERSION')}{' '}
-          </a>
-        </span>
       </div>
     </footer>
   )
