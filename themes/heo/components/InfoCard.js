@@ -3,7 +3,7 @@ import LazyImage from '@/components/LazyImage'
 import { siteConfig } from '@/lib/config'
 import SmartLink from '@/components/SmartLink'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import CONFIG from '../config'
 import Announcement from './Announcement'
 import Card from './Card'
@@ -24,6 +24,19 @@ export function InfoCard(props) {
   const icon2 = siteConfig('HEO_INFO_CARD_ICON2', null, CONFIG)
   const qrcode2 = siteConfig('HEO_INFO_CARD_ICON2_QRCODE', null, CONFIG)
   const [showQrCode, setShowQrCode] = useState(false)
+  const iconRef = useRef(null)
+  const [qrPosition, setQrPosition] = useState({ top: 0, left: 0 })
+
+  // 更新二维码弹窗位置
+  useEffect(() => {
+    if (showQrCode && iconRef.current) {
+      const rect = iconRef.current.getBoundingClientRect()
+      setQrPosition({
+        top: rect.top - 220, // 弹窗高度约210px + 间距10px
+        left: rect.left + rect.width / 2
+      })
+    }
+  }, [showQrCode])
   return (
     <Card className='wow fadeInUp bg-[#4f65f0] dark:bg-blue-600 text-white flex flex-col w-72 overflow-hidden relative'>
       {/* 信息卡牌第一行 */}
@@ -62,29 +75,30 @@ export function InfoCard(props) {
             </div>
           )}
           {url2 && (
-            <div 
-              className='relative bg-indigo-400 p-2 rounded-full w-10 items-center flex justify-center transition-colors duration-200 dark:bg-blue-500 dark:hover:bg-black hover:bg-white'
-              onMouseEnter={() => qrcode2 && setShowQrCode(true)}
-              onMouseLeave={() => setShowQrCode(false)}>
-              <SmartLink href={url2}>
-                {icon2?.startsWith('/') || icon2?.startsWith('http') ? (
-                  <img src={icon2} className='w-5 h-5' alt='' />
-                ) : (
-                  <i className={icon2} />
-                )}
-              </SmartLink>
-              {/* 悬停显示二维码 */}
-              {qrcode2 && (
-                <div className={`${showQrCode ? 'opacity-100 visible scale-100' : 'opacity-0 invisible scale-95'} absolute -top-[13.5rem] left-1/2 -translate-x-1/2 z-50 transition-all duration-200`}>
-                  <div className='bg-white dark:bg-gray-800 p-2 rounded-lg shadow-2xl border border-indigo-300 dark:border-blue-400'>
-                    <img src={qrcode2} className='w-48 h-48 object-contain rounded' alt='二维码' />
-                    <div className='text-xs text-center mt-1.5 text-gray-700 dark:text-gray-200 font-medium'>我的微信</div>
-                  </div>
-                  {/* 小三角箭头 */}
-                  <div className='absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-white dark:border-t-gray-800'></div>
-                </div>
+            <>
+              <div 
+                ref={iconRef}
+                className='relative bg-indigo-400 p-2 rounded-full w-10 items-center flex justify-center transition-colors duration-200 dark:bg-blue-500 dark:hover:bg-black hover:bg-white'
+                onMouseEnter={() => qrcode2 && setShowQrCode(true)}
+                onMouseLeave={() => setShowQrCode(false)}>
+                <SmartLink href={url2}>
+                  {icon2?.startsWith('/') || icon2?.startsWith('http') ? (
+                    <img src={icon2} className='w-5 h-5' alt='' />
+                  ) : (
+                    <i className={icon2} />
+                  )}
+                </SmartLink>
+              </div>
+              {/* 悬停显示二维码 - 使用 Portal 渲染到 body */}
+              {qrcode2 && showQrCode && typeof window !== 'undefined' && (
+                <QrCodePopup 
+                  qrcode={qrcode2} 
+                  position={qrPosition}
+                  onMouseEnter={() => setShowQrCode(true)}
+                  onMouseLeave={() => setShowQrCode(false)}
+                />
               )}
-            </div>
+            </>
           )}
         </div>
         {/* 第三个按钮 */}
@@ -118,6 +132,30 @@ function MoreButton() {
         <div className='font-bold'>{text3}</div>
       </div>
     </SmartLink>
+  )
+}
+
+/**
+ * 二维码弹窗组件
+ */
+function QrCodePopup({ qrcode, position, onMouseEnter, onMouseLeave }) {
+  return (
+    <div 
+      className='fixed z-[9999] transition-all duration-200'
+      style={{ 
+        top: `${position.top}px`, 
+        left: `${position.left}px`,
+        transform: 'translateX(-50%)'
+      }}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}>
+      <div className='bg-white dark:bg-gray-800 p-3 rounded-xl shadow-2xl border-2 border-indigo-400 dark:border-blue-500'>
+        <img src={qrcode} className='w-44 h-44 object-contain' alt='二维码' />
+        <div className='text-sm text-center mt-2 text-gray-700 dark:text-gray-200 font-medium'>我的微信</div>
+      </div>
+      {/* 小三角箭头 */}
+      <div className='absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[8px] border-r-[8px] border-t-[8px] border-l-transparent border-r-transparent border-t-white dark:border-t-gray-800'></div>
+    </div>
   )
 }
 
