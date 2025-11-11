@@ -8,7 +8,7 @@ const CONFIG = {
 
   // 首页顶部通知条滚动内容，如不需要可以留空 []
   HEO_NOTICE_BAR: [
-    { title: '我坚信： 推动世界变得更好的起点，是让自己先变得更好。', url: 'https://achacha.cn' }
+    { title: '我坚信： 推动世界变得更好的起点，是让自己先变得更好。', url: 'https://achatalk.com' }
   ],
 
   // 英雄区左右侧组件颠倒位置
@@ -17,12 +17,12 @@ const CONFIG = {
   HEO_HERO_BODY_REVERSE: false,
 
   // 英雄区(首页顶部大卡)
-  HEO_HERO_TITLE_1: '高效工作',
-  HEO_HERO_TITLE_2: '解放专注力',
-  HEO_HERO_TITLE_3: 'achacha.cn',
-  HEO_HERO_TITLE_4: '超级个体',
-  HEO_HERO_TITLE_5: '工具只是起点，关键在于如何运用',
-  HEO_HERO_TITLE_LINK: 'https://achacha.cn',
+  HEO_HERO_TITLE_1: '专注分享',
+  HEO_HERO_TITLE_2: 'AI与效率工具',
+  HEO_HERO_TITLE_3: 'achatalk.com',
+  HEO_HERO_TITLE_4: '新鲜事',
+  HEO_HERO_TITLE_5: 'AI、科技、成长干货全分享',
+  HEO_HERO_TITLE_LINK: 'https://achatalk.com',
   // 英雄区遮罩文字
   HEO_HERO_COVER_TITLE: '随机漫步',
 
@@ -39,20 +39,19 @@ const CONFIG = {
   // 右侧个人资料卡牌欢迎语，点击可自动切换
   HEO_INFOCARD_GREETINGS: [
     'Hi, 我是',
-    '🔋 从工具中获得力量',
-    '🏜️ 找到生活的掌控感',
+    '🐱 INFJ',
+    '🏜️ 去找到属于自己的生活',
     '🧘 高效解决问题，解放专注力',
     '🎐 聪明工作，是为了更好地生活',
-    '💞 找到你的心流动力',
-    '🧑‍💻 build in public'
+    '💞 找到你的心流动力'
   ],
 
   // 个人资料底部按钮
   HEO_INFO_CARD_URL1: '/about',
   HEO_INFO_CARD_ICON1: 'fas fa-user',
-  HEO_INFO_CARD_URL2: 'https://github.com/cha310',
-  HEO_INFO_CARD_ICON2: 'fab fa-github',
-  HEO_INFO_CARD_URL3: 'https://www.achacha.cn',
+  HEO_INFO_CARD_URL2: 'https://xhslink.com/m/1d9PONfwPsM',
+  HEO_INFO_CARD_ICON2: 'fab fa-xiaohongshu',
+  HEO_INFO_CARD_URL3: 'https://xhslink.com/m/1d9PONfwPsM',
   HEO_INFO_CARD_TEXT3: '了解更多',
 
   // 用户技能图标
@@ -116,10 +115,10 @@ const CONFIG = {
   ],
 
   HEO_SOCIAL_CARD: true, // 是否显示右侧，点击加入社群按钮
-  HEO_SOCIAL_CARD_TITLE_1: '交流频道',
-  HEO_SOCIAL_CARD_TITLE_2: '加入我们的社群讨论分享',
+  HEO_SOCIAL_CARD_TITLE_1: '交流社群',
+  HEO_SOCIAL_CARD_TITLE_2: '快人一步，加入社群讨论分享',
   HEO_SOCIAL_CARD_TITLE_3: '点击加入社群',
-  HEO_SOCIAL_CARD_URL: 'https://achacha.cn',
+  HEO_SOCIAL_CARD_URL: 'https://xhslink.com/m/1d9PONfwPsM',
 
   // 底部统计面板文案
   HEO_POST_COUNT_TITLE: '文章数:',
