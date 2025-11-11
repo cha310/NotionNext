@@ -37,10 +37,14 @@ const LatestPostsGroup = ({ latestPosts, siteInfo }) => {
 
             <div
               className={
-                ' font-bold  overflow-x-hidden dark:text-white hover:text-indigo-600 px-2 duration-200 w-full rounded ' +
+                ' overflow-x-hidden dark:text-white hover:text-indigo-600 px-2 duration-200 w-full rounded ' +
                 ' hover:text-indigo-400 cursor-pointer'
               }>
-              <div className='line-clamp-2 menu-link'>{post.title}</div>
+              <div className='line-clamp-2 menu-link font-bold'>{post.title}</div>
+              <div className='text-xs text-gray-400 dark:text-gray-500 mt-1'>
+                <i className='far fa-calendar-alt mr-1'></i>
+                {post?.publishDay || post?.date?.start_date}
+              </div>
             </div>
           </SmartLink>
         )

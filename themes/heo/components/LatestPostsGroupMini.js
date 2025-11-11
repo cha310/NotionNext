@@ -49,10 +49,14 @@ export default function LatestPostsGroupMini({ latestPosts, siteInfo }) {
               className={
                 (selected ? ' text-indigo-400 ' : 'dark:text-gray-200') +
                 ' text-sm overflow-x-hidden hover:text-indigo-600 px-2 duration-200 w-full rounded ' +
-                ' hover:text-indigo-400 dark:hover:text-blue-600 cursor-pointer items-center flex'
+                ' hover:text-indigo-400 dark:hover:text-blue-600 cursor-pointer flex flex-col justify-center'
               }>
               <div>
                 <div className='line-clamp-2 menu-link'>{post.title}</div>
+                <div className='text-xs text-gray-400 dark:text-gray-500 mt-1'>
+                  <i className='far fa-calendar-alt mr-1'></i>
+                  {post?.publishDay || post?.date?.start_date}
+                </div>
               </div>
             </div>
           </SmartLink>

@@ -34,7 +34,7 @@ const CONFIG = {
   // 英雄区右侧推荐文章标签, 例如 [推荐] , 最多六篇文章; 若留空白''，则推荐最近更新文章
   HEO_HERO_RECOMMEND_POST_TAG: '推荐',
   HEO_HERO_RECOMMEND_POST_SORT_BY_UPDATE_TIME: false, // 推荐文章排序，为`true`时将强制按最后修改时间倒序
-  HERO_RECOMMEND_COVER: 'https://cdn.wplaceimage.com/notion%E8%8B%B1%E9%9B%84%E5%8C%BA%E5%B0%81%E9%9D%A2.jpg', // 英雄区右侧图片
+  HERO_RECOMMEND_COVER: 'https://cdn.wplaceimage.com/notion%E8%8B%B1%E9%9B%84%E5%8C%BA%E5%B0%81%E9%9D%A2%20(1).jpg', // 英雄区右侧图片
 
   // 右侧个人资料卡牌欢迎语，点击可自动切换
   HEO_INFOCARD_GREETINGS: [
@@ -49,7 +49,7 @@ const CONFIG = {
   HEO_INFO_CARD_URL1: '/about',
   HEO_INFO_CARD_ICON1: 'fas fa-user',
   HEO_INFO_CARD_URL2: 'https://xhslink.com/m/1d9PONfwPsM',
-  HEO_INFO_CARD_ICON2: '/svg/xiaohongshu.svg', // 支持 Font Awesome 图标类名或图片路径
+  HEO_INFO_CARD_ICON2: '/svg/xiaohongshu-red.svg', // 支持 Font Awesome 图标类名或图片路径 - 红薯图标样式
   HEO_INFO_CARD_URL3: 'https://xhslink.com/m/1d9PONfwPsM',
   HEO_INFO_CARD_TEXT3: '了解更多',
 
