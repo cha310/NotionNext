@@ -277,7 +277,7 @@ function getTopPosts({ latestPosts, allNavPages }) {
     return latestPosts
   }
 
-  // 显示包含‘推荐’标签的文章
+  // 显示包含'推荐'标签的文章
   let sortPosts = []
 
   // 排序方式
@@ -292,7 +292,12 @@ function getTopPosts({ latestPosts, allNavPages }) {
       return dateB - dateA
     })
   } else {
-    sortPosts = Object.create(allNavPages)
+    // 按发布日期排序
+    sortPosts = Object.create(allNavPages).sort((a, b) => {
+      const dateA = new Date(a?.publishDate || a?.date?.start_date || a?.lastEditedDate)
+      const dateB = new Date(b?.publishDate || b?.date?.start_date || b?.lastEditedDate)
+      return dateB - dateA
+    })
   }
 
   const topPosts = []
