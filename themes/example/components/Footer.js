@@ -2,7 +2,6 @@ import { BeiAnGongAn } from '@/components/BeiAnGongAn'
 import BeiAnSite from '@/components/BeiAnSite'
 import CopyRightDate from '@/components/CopyRightDate'
 import DarkModeButton from '@/components/DarkModeButton'
-import PoweredBy from '@/components/PoweredBy'
 
 export const Footer = props => {
   return (
@@ -19,7 +18,6 @@ export const Footer = props => {
             <BeiAnSite />
             <BeiAnGongAn />
           </div>
-          <PoweredBy />
         </div>
       </div>
     </footer>
